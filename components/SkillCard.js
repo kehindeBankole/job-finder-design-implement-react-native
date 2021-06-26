@@ -1,24 +1,37 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import Mobile from '../assets/images/Vector.svg';
+import Mark from '../assets/images/Shape.svg';
+import Product from '../assets/images/product design icon.svg';
 export default function SkillCard() {
+  const [click, setClick] = React.useState(false);
+  function handleTouch(id) {
+    setClick(prev => !prev);
+  }
   return (
     <>
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-        <View style={styles.card}>
+        <View style={styles.card} onTouchStart={handleTouch}>
           <Mobile />
-          <Text style={styles.name}>d</Text>
-          <View style={styles.clicked}></View>
+          <Text style={styles.name}>Mobile Developer</Text>
+          <View style={click ? styles.clicked : null}>
+            <Mark />
+          </View>
         </View>
-        <View style={styles.card}>
-          <Mobile />
-          <Text style={styles.name}>d</Text>
-          <View style={styles.clicked}></View>
+        <View style={styles.card} onTouchStart={handleTouch}>
+          <Product />
+          <Text style={styles.name}>Product Designer</Text>
+          <View style={click ? styles.clicked : null}>
+            <Mark />
+          </View>
         </View>
-        <View style={styles.card}>
+        <View style={styles.card} onTouchStart={handleTouch}>
           <Mobile />
-          <Text style={styles.name}>d</Text>
-          <View style={styles.clicked}></View>
+          <Text style={styles.name}>Software
+Engineer</Text>
+          <View style={click ? styles.clicked : null}>
+            <Mark />
+          </View>
         </View>
       </View>
 
@@ -28,33 +41,52 @@ export default function SkillCard() {
           justifyContent: 'space-between',
           marginTop: 35,
         }}>
-        <View style={styles.card}>
+        <View style={styles.card} onTouchStart={handleTouch}>
           <Mobile />
-          <Text style={styles.name}>d</Text>
-          <View style={styles.clicked}></View>
+          <Text style={styles.name}>Project
+Manager</Text>
+          <View style={click ? styles.clicked : null}>
+            <Mark />
+          </View>
         </View>
-        <View style={styles.card}>
+        <View style={styles.card} onTouchStart={handleTouch}>
           <Mobile />
-          <Text style={styles.name}>d</Text>
-          <View style={styles.clicked}></View>
+          <Text style={styles.name}>Back-End
+Developer</Text>
+          <View style={click ? styles.clicked : null}>
+            <Mark />
+          </View>
         </View>
-        <View style={styles.card}>
+        <View style={styles.card} onTouchStart={handleTouch}>
           <Mobile />
-          <Text style={styles.name}>d</Text>
-          <View style={styles.clicked}></View>
+          <Text style={styles.name}>Front-End
+Developer</Text>
+          <View style={click ? styles.clicked : null}>
+            <Mark />
+          </View>
         </View>
       </View>
       <View
         style={{flexDirection: 'row', justifyContent: 'center', marginTop: 35}}>
-        <View style={{marginRight: 10, ...styles.card}}>
+        <View
+          style={{marginRight: 10, ...styles.card}}
+          onTouchStart={handleTouch}>
           <Mobile />
-          <Text style={styles.name}>d</Text>
-          <View style={styles.clicked}></View>
+          <Text style={styles.name}>Graphics
+Designer</Text>
+          <View style={click ? styles.clicked : null}>
+            <Mark />
+          </View>
         </View>
-        <View style={{marginLeft: 10, ...styles.card}} onTouchStart={()=>console.log(1)} onTouchEnd={()=>console.log('end')} >
+        <View
+          style={{marginLeft: 10, ...styles.card}}
+          onTouchStart={() => handleTouch}>
           <Mobile />
-          <Text style={styles.name}>d</Text>
-          <View style={styles.clicked}></View>
+          <Text style={styles.name}>Fullstack
+Developer</Text>
+          <View style={click ? styles.clicked : null}>
+            <Mark />
+          </View>
         </View>
       </View>
     </>
@@ -63,9 +95,11 @@ export default function SkillCard() {
 
 const styles = StyleSheet.create({
   name: {
-    fontFamily: 'Inter-Light',
-    fontSize: 18,
+    fontFamily: 'Inter-Regular',
+    fontSize: 15,
     fontWeight: '400',
+    marginTop: 17,
+    textAlign:'center'
   },
   card: {
     width: 115,
@@ -87,5 +121,9 @@ const styles = StyleSheet.create({
     right: 0,
     borderBottomLeftRadius: 15,
     borderTopRightRadius: 15,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: 'red',
   },
 });
