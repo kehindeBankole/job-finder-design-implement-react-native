@@ -6,26 +6,35 @@ export default function SkillCard() {
     <>
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
         <View style={styles.card}>
-          <Text>d</Text>
+          <Text  style={styles.name}>d</Text>
         </View>
         <View style={styles.card}>
-          <Text>d</Text>
+          <Text  style={styles.name}>d</Text>
         </View>
         <View style={styles.card}>
-          <Text>d</Text>
+          <Text  style={styles.name}>d</Text>
         </View>
       </View>
 
       <View style={{flexDirection: 'row', justifyContent: 'space-between' , marginTop:35}}>
         <View style={styles.card}>
-          <Text>d</Text>
+          <Text  style={styles.name}>d</Text>
           <View style={styles.clicked}></View>
         </View>
         <View style={styles.card}>
-          <Text>d</Text>
+          <Text  style={styles.name}>d</Text>
         </View>
         <View style={styles.card}>
-          <Text>d</Text>
+          <Text  style={styles.name}>d</Text>
+        </View>
+      </View>
+      <View style={{flexDirection: 'row', justifyContent: 'center' ,marginTop:35}}>
+        <View style={{marginRight:10 , ...styles.card}}>
+          <Text  style={styles.name}>d</Text>
+          <View style={styles.clicked}></View>
+        </View>
+        <View style={{marginLeft:10 , ...styles.card}}>
+          <Text style={styles.name}>d</Text>
         </View>
       </View>
     </>
@@ -33,22 +42,26 @@ export default function SkillCard() {
 }
 
 const styles = StyleSheet.create({
+  name:{
+fontFamily:"Inter-Black",
+fontSize:30,
+fontWeight:'900'
+  },
   card: {
     width: 115,
     height: 130,
-    borderWidth: 2,
+    borderWidth: 1,
     borderColor:'#EAECF0',
     borderRadius: 15,
- //   borderColor: 'red',
     justifyContent:'center',
     flexDirection:"row",
     alignItems:'center',
-    position:"relative"
+    position:"relative",
   },
   clicked:{
     width:25,
     height:25,
-    backgroundColor:'red',
+    backgroundColor:'#9969D3',
     position:"absolute",
     top:0,
     right:0,

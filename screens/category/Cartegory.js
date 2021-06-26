@@ -21,10 +21,11 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
   pageTitle: {
-    fontWeight: '500',
+    fontWeight: '700',
     textAlign: 'center',
     fontSize: 28,
     color: '#2E3137',
+    fontFamily:'Inter-Bold'
   },
   pageSubTitle: {
     fontWeight: '400',
