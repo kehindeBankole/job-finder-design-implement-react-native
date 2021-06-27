@@ -1,5 +1,11 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-trailing-spaces */
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable prettier/prettier */
+/* eslint-disable comma-dangle */
+/* eslint-disable prettier/prettier */
 import React from 'react';
-import {StyleSheet, Text, FlatList, View} from 'react-native';
+import { Pressable ,  StyleSheet, Text, View , Dimensions} from 'react-native';
 import SkillCard from '../../components/SkillCard';
 
 export default function Cartegory() {
@@ -10,6 +16,9 @@ export default function Cartegory() {
       <View style={{marginTop:30}}>  
      <SkillCard/>
       </View>
+      <Pressable style={styles.nextButton}>
+        <Text style={styles.nextButtonText}>next</Text>
+      </Pressable>
     </View>
   );
 }
@@ -19,6 +28,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingTop: 60,
     paddingBottom: 20,
+    position:'relative',
+    height:Dimensions.get('window').height-60
   },
   pageTitle: {
     fontWeight: '700',
@@ -32,8 +43,29 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 17,
     color: '#7E838B',
-    lineHeight:18,
-    marginTop:40
+    lineHeight:28,
+    marginTop:30,
+    fontFamily:'Inter-Regular'
+},
+nextButton:{
+  backgroundColor:'#9969D3',
+  width:"100%",
+  height:50,
+  display:'flex',
+  flexDirection:'row',
+  justifyContent:'center',
+  alignItems:'center',
+  borderRadius:15,
+  position:"absolute",
+bottom:0,
+left:16
+},
+nextButtonText:{
+  color:"#FFFFFF",
+  fontWeight:'500',
+  fontFamily:'Inter-Medium',
+  fontSize:16,
+  textTransform:'capitalize'
 }
   
 });

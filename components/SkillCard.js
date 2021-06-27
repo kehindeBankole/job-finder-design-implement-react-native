@@ -1,5 +1,9 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable prettier/prettier */
+
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import { Pressable , StyleSheet, Text, View , Dimensions} from 'react-native';
 import Mobile from '../assets/images/Vector.svg';
 import Mark from '../assets/images/Shape.svg';
 import Product from '../assets/images/product design icon.svg';
@@ -9,7 +13,7 @@ export default function SkillCard() {
     setClick(prev => !prev);
   }
   return (
-    <>
+    <View>
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
         <View style={styles.card} onTouchStart={handleTouch}>
           <Mobile />
@@ -27,8 +31,7 @@ export default function SkillCard() {
         </View>
         <View style={styles.card} onTouchStart={handleTouch}>
           <Mobile />
-          <Text style={styles.name}>Software
-Engineer</Text>
+          <Text style={styles.name}>Software Engineer</Text>
           <View style={click ? styles.clicked : null}>
             <Mark />
           </View>
@@ -43,24 +46,21 @@ Engineer</Text>
         }}>
         <View style={styles.card} onTouchStart={handleTouch}>
           <Mobile />
-          <Text style={styles.name}>Project
-Manager</Text>
+          <Text style={styles.name}>Project Manager</Text>
           <View style={click ? styles.clicked : null}>
             <Mark />
           </View>
         </View>
         <View style={styles.card} onTouchStart={handleTouch}>
           <Mobile />
-          <Text style={styles.name}>Back-End
-Developer</Text>
+          <Text style={styles.name}>Back-End Developer</Text>
           <View style={click ? styles.clicked : null}>
             <Mark />
           </View>
         </View>
         <View style={styles.card} onTouchStart={handleTouch}>
           <Mobile />
-          <Text style={styles.name}>Front-End
-Developer</Text>
+          <Text style={styles.name}>Front-End Developer</Text>
           <View style={click ? styles.clicked : null}>
             <Mark />
           </View>
@@ -72,24 +72,22 @@ Developer</Text>
           style={{marginRight: 10, ...styles.card}}
           onTouchStart={handleTouch}>
           <Mobile />
-          <Text style={styles.name}>Graphics
-Designer</Text>
+          <Text style={styles.name}>Graphics Designer</Text>
           <View style={click ? styles.clicked : null}>
             <Mark />
           </View>
         </View>
-        <View
+        <Pressable
           style={{marginLeft: 10, ...styles.card}}
-          onTouchStart={() => handleTouch}>
+          onPress={() => handleTouch()}>
           <Mobile />
-          <Text style={styles.name}>Fullstack
-Developer</Text>
+          <Text style={styles.name}>Fullstack Developer</Text>
           <View style={click ? styles.clicked : null}>
             <Mark />
           </View>
-        </View>
+        </Pressable>
       </View>
-    </>
+    </View>
   );
 }
 
@@ -99,7 +97,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '400',
     marginTop: 17,
-    textAlign:'center'
+    textAlign: 'center',
   },
   card: {
     width: 115,
@@ -126,4 +124,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     color: 'red',
   },
+
 });
