@@ -7,8 +7,18 @@
 import React from 'react';
 import { Pressable ,  StyleSheet, Text, View , Dimensions} from 'react-native';
 import SkillCard from '../../components/SkillCard';
+//import { useHistory } from "react-router-dom";
 
-export default function Cartegory() {
+
+
+export default function Cartegory({history}) {
+
+ // let history = useHistory();
+
+  function handleClick() {
+  //  history.push("/home");
+  console.log(23)
+  }
   return (
     <View style={styles.container}>
       <Text style={styles.pageTitle}>choose your skills</Text>
@@ -16,7 +26,7 @@ export default function Cartegory() {
       <View style={{marginTop:30}}>  
      <SkillCard/>
       </View>
-      <Pressable style={styles.nextButton}>
+      <Pressable style={styles.nextButton} onPress={()=>history.push('/home')}>
         <Text style={styles.nextButtonText}>next</Text>
       </Pressable>
     </View>

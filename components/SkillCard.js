@@ -10,7 +10,7 @@ import Product from '../assets/images/product design icon.svg';
 export default function SkillCard() {
   const [click, setClick] = React.useState(false);
   function handleTouch(id) {
-    setClick(prev => !prev);
+   setClick(prev => !prev);
   }
   return (
     <View>
