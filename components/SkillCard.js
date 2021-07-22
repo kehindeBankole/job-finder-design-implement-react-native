@@ -61,7 +61,7 @@ export default function SkillCard() {
         <View style={styles.card} onTouchStart={handleTouch}>
           <Mobile />
           <Text style={styles.name}>Front-End Developer</Text>
-          <View style={click ? styles.clicked : null}>
+          <View style={click && styles.clicked}>
             <Mark />
           </View>
         </View>
@@ -93,7 +93,7 @@ export default function SkillCard() {
 
 const styles = StyleSheet.create({
   name: {
-    fontFamily: 'Inter-Regular',
+    fontFamily:'GTWalsheimPro-Regular',
     fontSize: 15,
     fontWeight: '400',
     marginTop: 17,

@@ -32,11 +32,11 @@ const styles = StyleSheet.create({
     height:Dimensions.get('window').height-60
   },
   pageTitle: {
-    fontWeight: '700',
+   fontWeight: '700',
     textAlign: 'center',
     fontSize: 28,
     color: '#2E3137',
-    fontFamily:'Inter-Bold'
+    fontFamily:'GTWalsheimPro-CondensedBold'
   },
   pageSubTitle: {
     fontWeight: '400',
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     color: '#7E838B',
     lineHeight:28,
     marginTop:30,
-    fontFamily:'Inter-Regular'
+    fontFamily:'GTWalsheimPro-Regular'
 },
 nextButton:{
   backgroundColor:'#9969D3',
