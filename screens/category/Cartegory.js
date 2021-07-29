@@ -5,13 +5,13 @@
 /* eslint-disable comma-dangle */
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import { Pressable ,  StyleSheet, Text, View , Dimensions} from 'react-native';
+import { Pressable ,  StyleSheet, Text, View , Dimensions , ScrollView} from 'react-native';
 import SkillCard from '../../components/SkillCard';
 //import { useHistory } from "react-router-dom";
 
 
 
-export default function Cartegory({history}) {
+export default function Cartegory({navigation}) {
 
  // let history = useHistory();
 
@@ -23,10 +23,10 @@ export default function Cartegory({history}) {
     <View style={styles.container}>
       <Text style={styles.pageTitle}>choose your skills</Text>
       <Text style={styles.pageSubTitle}>We will show you relevant gigs associated with your skill set.</Text>
-      <View style={{marginTop:30}}>  
+      <ScrollView showsVerticalScrollIndicator={false} style={{marginTop:30 ,  height:Dimensions.get('window').height-30}}>  
      <SkillCard/>
-      </View>
-      <Pressable style={styles.nextButton} onPress={()=>history.push('/home')}>
+      </ScrollView>
+      <Pressable style={styles.nextButton} onPress={()=>navigation.navigate('Home')}>
         <Text style={styles.nextButtonText}>next</Text>
       </Pressable>
     </View>
@@ -36,10 +36,10 @@ export default function Cartegory({history}) {
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 16,
-    paddingTop: 60,
+   paddingTop: 60,
     paddingBottom: 20,
     position:'relative',
-    height:Dimensions.get('window').height-60
+    height:Dimensions.get('window').height-30
   },
   pageTitle: {
    fontWeight: '700',
@@ -66,9 +66,9 @@ nextButton:{
   justifyContent:'center',
   alignItems:'center',
   borderRadius:15,
-  position:"absolute",
-bottom:0,
-left:16
+//   position:"absolute",
+// bottom:0,
+// left:16
 },
 nextButtonText:{
   color:"#FFFFFF",
