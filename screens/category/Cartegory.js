@@ -5,7 +5,7 @@
 /* eslint-disable comma-dangle */
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import { Pressable ,  StyleSheet, Text, View , Dimensions , ScrollView} from 'react-native';
+import { Pressable ,  StyleSheet, Text, View , Dimensions , ScrollView ,   TouchableOpacity} from 'react-native';
 import SkillCard from '../../components/SkillCard';
 //import { useHistory } from "react-router-dom";
 
@@ -26,9 +26,9 @@ export default function Cartegory({navigation}) {
       <ScrollView showsVerticalScrollIndicator={false} style={{marginTop:30 ,  height:Dimensions.get('window').height-30}}>  
      <SkillCard/>
       </ScrollView>
-      <Pressable style={styles.nextButton} onPress={()=>navigation.navigate('Home')}>
+      <TouchableOpacity style={styles.nextButton} onPress={()=>navigation.navigate('Home')}>
         <Text style={styles.nextButtonText}>next</Text>
-      </Pressable>
+      </TouchableOpacity>
     </View>
   );
 }
