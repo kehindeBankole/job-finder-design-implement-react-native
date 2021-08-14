@@ -10,11 +10,15 @@ import {
   FlatList,
 } from 'react-native';
 import Filter from '../../assets/images/filter.svg';
+import CustomModal from '../../components/CustomModal';
 import JobCard from '../../components/JobCard';
 export default function Home() {
   const [text, onChangeText] = React.useState('Useless Text');
+  const [clicked, setClicked] = React.useState(false);
+  const [title, setTitle] = React.useState('');
+  const [company, setCompany] = React.useState('');
   return (
-    <ScrollView style={styles.container}>
+    <View style={styles.container}>
       <View
         style={{
           backgroundColor: 'white',
@@ -35,28 +39,85 @@ export default function Home() {
           </TouchableOpacity>
         </View>
       </View>
-      <View style={{marginTop: 5}}>
+      <ScrollView style={{marginTop: 5}}>
         <FlatList
           data={[
-            {img: require('../../assets/images/image.png') , title:"User Interface Designer"},
-            {img: require('../../assets/images/bat.png') , title:"UI/UX Designer"},
-            {img: require('../../assets/images/3arrow.png') , title:"Game UI Designer"},
-            {img: require('../../assets/images/show.png') , title:"Social Media Specialist"},
-            {img: require('../../assets/images/peackock.png') , title:"Graphics Designer"},
-            {img: require('../../assets/images/motion.png') , title:"Motion Illustrator"},
-            {img: require('../../assets/images/bat.png') , title:"UI/UX Designer"},
-            {img: require('../../assets/images/image.png') , title:"User Interface Designer"},
+            {
+              img: require('../../assets/images/image.png'),
+              title: 'User Interface Designer',
+              company:"TBWA\Buenos Aires"
+            },
+            {
+              img: require('../../assets/images/bat.png'),
+              title: 'UI/UX Designer',
+              company:"Cybermoth GmbH"
+            },
+            {
+              img: require('../../assets/images/3arrow.png'),
+              title: 'Game UI Designer',
+              company:"Javary Co. Studios"
+            },
+            {
+              img: require('../../assets/images/show.png'),
+              title: 'Social Media Specialist',
+              company:"Showcialize"
+            },
+            {
+              img: require('../../assets/images/peackock.png'),
+              title: 'Graphics Designer',
+              company:"Mohini Magazine"
+            },
+            {
+              img: require('../../assets/images/motion.png'),
+              title: 'Motion Illustrator',
+              company:"Mohini Magazine"
+            },
+            {
+              img: require('../../assets/images/bat.png'),
+              title: 'UI/UX Designer',
+              company:"TBWA\Buenos Aires"
+            },
+            {
+              img: require('../../assets/images/image.png'),
+              title: 'User Interface Designer',
+              company:"TBWA\Buenos Aires"
+            },
           ]}
           renderItem={({item}) => (
             <View style={{marginBottom: 5}}>
-              <JobCard img={item.img} title={item.title}/>
+              <JobCard
+                img={item.img}
+                title={item.title}
+                company={item.company}
+                handleClick={() => {
+                  setClicked(true);
+                  setTitle(item.title);
+                  setCompany(item.company);
+                }}
+              />
             </View>
           )}
           keyExtractor={item => item.id}
           // extraData={selectedId}
         />
+      </ScrollView>
+
+      <View
+        style={{
+          height: Dimensions.get('window').height,
+          width: Dimensions.get('window').width,
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          position: 'absolute',
+          // top:0,
+          zIndex: 1,
+          padding: 0,
+          margin: 0,
+          bottom: clicked === false ? -999 : 0,
+        }}
+        onTouchStart={() => setClicked(false)}>
+        <CustomModal click={false} title={title} company={company} />
       </View>
-    </ScrollView>
+    </View>
   );
 }
 

@@ -23,38 +23,3 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({})   
-
-
-// // In App.js in a new project
-
-// import * as React from 'react';
-// import { View, Text , Pressable} from 'react-native';
-
-
-// function HomeScreen({navigation}) {
-//   return (
-//     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-//       <Text>Home Screen</Text>
-//       <Pressable style={{backgroundColor:'red' , height:80}}onPress={()=>navigation.navigate('Cat')}>
-// <Text>go to cat</Text>
-//       </Pressable>
-//     </View>
-//   );
-// }
-// function CatScreen() {
-//   return (
-//     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-//       <Text>Cat Screen</Text>
-//     </View>
-//   );
-// }
-// const Stack = createStackNavigator();
-
-// function App() {
-//   return (
-   
-//   );
-// }
-
-// export default App;
-

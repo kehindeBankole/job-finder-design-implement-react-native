@@ -1,9 +1,9 @@
 import React from 'react';
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity,Image} from 'react-native';
 
 export default function JobCard(props) {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={(img)=>props.handleClick(img)}>
       <View style={{display: 'flex', flexDirection: 'row'}}>
         <Image
           style={styles.tinyLogo}
@@ -11,11 +11,11 @@ export default function JobCard(props) {
         />
         <View style={{marginLeft: 20, alignSelf: 'center'}}>
           <Text style={styles.title}>{props.title}</Text>
-          <Text style={styles.company}>TBWA\Buenos Aires</Text>
+          <Text style={styles.company}>{props.company}</Text>
         </View>
       </View>
       <Text style={styles.time}>3s ago</Text>
-    </View>
+    </TouchableOpacity>
   );
 }
 
